@@ -1,0 +1,842 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f5f7; /* Hellgraue Hintergrundfarbe über die gesamte Breite */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
+}
+
+li, a, button, .logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Hier sind die bearbeitungsmöglichkeiten für die Navbar */
+
+header {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    height: 100px; /* Höhe der Navbar */
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+    margin-left: 300px; /* Abstand zur linken Seite */
+    font-size: 24px;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav_links {
+    list-style: none;
+    display: flex;
+    margin-left: 200px; /* Abstand zur linken Seite */
+    
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover,
+.nav_links li a.active {
+    color: rgb(16, 88, 176);
+}
+
+button {
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: rgb(16, 88, 176);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: #ffffff;
+    margin-right: 200px; /* Abstand zur linken Seite */
+}
+
+button:hover {
+    background-color: rgb(6, 53, 110);
+}
+
+
+/* Ab hier sind die Kategorien bearbeitungen (Grösse, Schriftart etc.) */
+
+section {
+    font-family: Arial, sans-serif;
+}
+
+
+/* Spezifische Seitenanpassungen */
+
+#startseite {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh; /* Ensures the start page takes the full viewport height */
+}
+
+#lebenslauf {
+    padding-bottom: calc(100px - 97px); /* Adjust bottom padding to account for navbar height */
+}
+
+#bewerbungsschreiben {
+    height: auto; /* Adjust as needed */
+}
+
+
+#downloads {
+    min-height: calc(50vh - 97px); /* Ensures the downloads section takes the full viewport height minus the height of the navbar */
+}
+
+#kontakt {
+    min-height: calc(70vh - 97px); /* Adjust top padding to account for navbar height */
+}
+
+#bewerbungsschreiben, #downloads {
+    background-color: rgb(255, 255, 255);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-container p {
+    width: 45%;
+}
+
+.lebenslauf-container {
+    margin: 0 auto; /* Zentriere den Lebenslauf-Container */
+    margin-left: 0;
+}
+
+.section-header {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.section-header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.section-header .underline {
+    width: 50px;
+    height: 3px;
+    background-color: black;
+    margin: 10px 0;
+}
+
+.section-header p {
+    margin: 0;
+    font-size: 1em;
+    color: gray;
+    font-weight: 500;
+}
+
+
+/* Startseite: Text und Bild bearbeitung */
+.sticker-img {
+    filter: grayscale(100%) brightness(0%);
+    transition: opacity 0.3s ease 0.3s; /* Transition für das Ausblenden mit Verzögerung */
+}
+
+.card:hover .sticker-img {
+    opacity: 0; /* Blendet das sticker-img-Element aus */
+    transition: opacity 0.3s ease 0s; /* Sofortiges Ausblenden ohne Verzögerung */
+}
+
+.card:not(:hover) .sticker-img {
+    opacity: 1; /* Macht das sticker-img-Element wieder sichtbar */
+    transition: opacity 0.5s ease 0.7s; /* Verzögertes Einblenden */
+}
+
+.content {
+    text-align: left;
+    margin-left: 300px;
+    margin-right: 0px;
+}
+
+.content h1 {
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.content h1 span {
+    color: rgb(16, 88, 176);
+}
+
+.content p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card {
+    margin-right: 200px;
+    width: 600px;
+    height: 800px;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 15px solid #fff;
+    position: relative;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);    
+}
+
+.card-img {
+    width: 600px;
+    height: 800px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card-body {
+    width: 570px;
+    height: 800px;
+    top: 0;
+    right: -100%;
+    position: absolute;
+    background: #00000048;
+    backdrop-filter: blur(5px);
+    border-radius: 0px;
+    color: white;
+    padding: 30px;
+    transition: 1s;
+}
+
+.card-title {
+    margin-top: 70px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.card-info {
+    font-size: 20px;
+    margin: 100px 0;
+    font-weight: 400;
+}
+
+.card:hover .card-body {
+    right: 0;
+}
+
+/* Startseite: Kontakt Knopf */
+
+.contact-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: #000000;
+    text-decoration: none;
+    border: 2px solid rgb(16, 88, 176);
+    border-radius: 5px;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgb(16, 88, 176);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.contact-button:hover::before {
+    left: 0;
+}
+
+.contact-button:hover {
+    color: #ffffff;
+    transform: scale(1.03);
+}
+
+
+/* Lebenslauf Struktur */
+
+.lebenslauf-header, .bewerbungsschreiben-header, .zeugnisse-header, .downloads-header, .kontakt-header {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #222;
+    border-bottom: 4px solid rgb(16, 88, 176);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 10; /* Ändern Sie diesen Wert, um die Länge des Strichs anzupassen */
+    margin-left: 0; /* Zentriert das Element */
+}
+
+.lebenslauf-subtitle, .bewerbungsschreiben-subtitle, .zeugnisse-subtitle, .downloads-subtitle, .kontakt-subtitle {
+    font-size: 14px;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.lebenslauf-section, .bewerbungsschreiben-section, .zeugnisse-section, .downloads-section, .kontakt-section {
+    margin-bottom: 30px;
+    text-align: left;
+    margin-left: 300px;
+    margin-right: 900px;
+}
+
+.lebenslauf-section h2, .bewerbungsschreiben-section h2, .zeugnisse-section h2, .downloads-section h2, .kontakt-section h2 {
+    color: rgb(16, 88, 176);
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    padding-bottom: 5px;
+}
+
+.lebenslauf-section p, .lebenslauf-section ul li, .bewerbungsschreiben-section p, .bewerbungsschreiben-section ul li, .zeugnisse-section p, .zeugnisse-section ul li, .downloads-section p, .downloads-section ul li, .kontakt-section p, .kontakt-section ul li {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.lebenslauf-section ul, .bewerbungsschreiben-section ul, .zeugnisse-section ul, .downloads-section ul, .kontakt-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.schulbildung-text {
+    word-spacing: 5px;
+}
+
+
+/* Bewerbungsschreiben bearbeitung*/
+
+.bewerbung-content {
+    max-width: 800px;  /* Maximale Breite setzen */
+    margin: 0;         /* Entfernt jegliche automatische Zentrierung */
+    padding: 30px 0;   /* Oben & unten Platz lassen, aber keine seitlichen Abstände */
+    text-align: left;  /* Links ausrichten */
+    margin-left: 300px; /* Abstand zur linken Seite */
+}
+
+.bewerbung-content p {
+    font-size: 17.5px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.bewerbung-content h2 {
+    font-size: 22px;
+    color: rgb(16, 88, 176);
+    margin-bottom: 10px;
+}
+
+.section-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    margin-left: 300px; /* Abstand zur linken Seite */
+}
+
+.section-header .underline {
+    width: 50px;
+    height: 3px;
+    background-color: black;
+    margin: 10px 0;
+    margin-left: 300px; /* Abstand zur linken Seite */
+}
+
+.section-header p {
+    margin-left: 300px; /* Abstand zur linken Seite */
+}
+
+
+/* Unterschrift bearbeitung */
+
+.unterschrift-container {
+    margin: 10px 0;
+    text-align: left;
+    margin-left: -15px;
+}
+
+.unterschrift-container img {
+    width: 140px; /* Größe anpassen */
+    height: auto;
+}
+
+
+/* Downloads kästchen */
+
+.downloads-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-top: 45px;
+    margin-left: 300px; /* Abstand zur linken Seite */
+}
+
+.download-box {
+    background: white;
+    padding: 30px; /* Erhöht das Padding */
+    width: 350px; /* Erhöht die Breite */
+    height: 160px; /* Setzt eine feste Höhe */
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-box h3 {
+    font-size: 20px; /* Erhöht die Schriftgröße */
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.download-box p {
+    font-size: 16px; /* Erhöht die Schriftgröße */
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Hover-Effekt für die Download-Kästchen */
+.download-box:hover {
+    transform: scale(1.005); /* Vergrößert das Kästchen um 5% */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.25); /* Erhöht den Schatteneffekt */
+}
+
+/* Stil für den Download-Button als Text mit Strich darunter */
+.download-button {
+    display: inline-block;
+    font-size: 15px; /* Erhöht die Schriftgröße */
+    font-weight: bold;
+    color: orange;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.download-button::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: rgb(16, 88, 176);
+    margin-top: 2px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.download-button:hover {
+    color: rgb(6, 53, 110);
+}
+
+.download-button:hover::after {
+    background: rgb(6, 53, 110);
+}
+
+/* Stil für den Download-Button als Text mit Strich darunter */
+
+.download-button {
+    display: inline-block;
+    font-size: 15px; /* Erhöht die Schriftgröße */
+    font-weight: bold;
+    color: rgb(16, 88, 176);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.download-button::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: rgb(16, 88, 176);
+    margin-top: 2px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.download-button:hover {
+    color: rgb(6, 53, 110);
+}
+
+.download-button:hover::after {
+    background: rgb(6, 53, 110);
+}
+
+
+/* Kontakt bearbeitungen */
+
+.kontakt-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+    margin-left: 300px; /* Abstand zur linken Seite */
+}
+
+
+/* Kontaktformular */
+
+.kontakt-formular {
+    background: #f4f5f7;
+    padding: 30px;
+    flex: 1;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition für den Hover-Effekt */
+}
+
+.kontakt-formular h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.input-row input {
+    flex: 1;
+}
+
+.kontakt-formular input,
+.kontakt-formular textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.kontakt-formular textarea {
+    height: 100px;
+    resize: none;
+}
+
+.checkbox-container input {
+    margin-right: 10px;
+}
+
+.kontakt-formular:hover {
+    transform: scale(1.005); /* Vergrößert das Kästchen um 5% */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.25); /* Erhöht den Schatteneffekt */
+}
+
+
+/* Kontakt Button Styling */
+
+.kontakt-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(16, 88, 176);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-left: 0px;
+}
+
+.kontakt-button:hover {
+    background-color: rgb(6, 53, 110);
+}
+
+/* Kontaktinformationen */
+.kontakt-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: 'Montserrat', sans-serif; /* Schriftart für die Kontaktinformationen */
+}
+
+.kontakt-card {
+    margin-right: 200px; /* Abstand zur linken Seite */
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    min-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition für den Hover-Effekt */
+}
+
+.kontakt-card .icon {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.kontakt-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.kontakt-card p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Hover-Effekt für die Kontakt-Karten */
+.kontakt-card:hover {
+    transform: scale(1.005); /* Vergrößert die Karte um 5% */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.25); /* Erhöht den Schatteneffekt */
+}
+
+
+/* Abstand zwischen den Namen */
+
+.spacing-2023 {
+    display: inline-block;
+    margin-left: 85px;
+}
+
+.spacing-2017 {
+    display: inline-block;
+    margin-left: 93px;
+}
+
+.spacing-pc {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.spacing-office {
+    display: inline-block;
+    margin-left: 113px;
+}
+
+.spacing-mutter {
+    display: inline-block;
+    margin-left: 91px;
+}
+
+.spacing-vater {
+    display: inline-block;
+    margin-left: 92px;
+}
+
+.spacing-mutter-text {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.spacing-vater-text {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+
+/* Zeugnisse slider */
+
+#zeugnisse {
+   background-color: rgb(241, 242, 245);
+   padding: 2% 0;
+}
+
+.slider-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+    margin-left: 220px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Abstand zwischen den Bildern */
+}
+
+.slide img {
+    width: 700px;
+    height: 900px;
+    margin: 0 10px; /* Horizontaler Abstand zwischen den Bildern */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev { left: 10px; cursor: pointer; }
+
+.next { right: -165px; cursor: pointer; }
+
+
+/* Fusszeile */
+
+footer {
+    background-color: #ffffff; /* Dunkler Hintergrund */
+    box-shadow: 0 0 10px rgba(0, 0, 1, 0.1);
+    color: white;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: -200px;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-left p {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #000000;
+}
+
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  header, section, footer {
+    padding: 15px 5%;
+  }
+
+  .nav_links li {
+    margin: 0 10px;
+  }
+
+  #startseite {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content, .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card {
+    margin-top: 20px;
+  }
+}
+
+/* Smartphones (max-width: 768px) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 5%;
+  }
+
+  .nav_links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav_links li {
+    margin: 5px 0;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  section {
+    padding: 80px 5%;
+  }
+
+  .content h1 {
+    font-size: 28px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 15px 5%;
+  }
+}
+
+/* Extra small devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 24px;
+  }
+
+  button {
+    padding: 10px;
+  }
+}
